@@ -8,5 +8,5 @@ schedule_times, schedule_titles, schedule_messages = src.excel_handling.read_exc
 for x in range(len(schedule_times)):
     trigger_bot(schedule_times[x], schedule_titles[x], schedule_messages[x])
 else:
-    notify('End Of Day', 'The Schedules for the day are completed...')
+    notify('End Of Day', 'There are no tasks for today, HAVE FUN!!!')
 
