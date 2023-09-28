@@ -1,6 +1,8 @@
 from src.Bot import get_fake_reminder
 import pandas as pd
 
+from src.desktop_notification import notify
+
 
 def read_excel():
     try:
@@ -12,7 +14,8 @@ def read_excel():
         messages = excel_data['Message']
         return times, titles, messages
     except FileNotFoundError:
-        print('file not found')
+        notify("file not found", "not found")
+        return list(), list(), list()
 
 
 def fake_excel_data():
